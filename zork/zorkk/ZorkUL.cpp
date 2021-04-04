@@ -14,23 +14,23 @@ ZorkUL::ZorkUL() {
 }
 
 void ZorkUL::createRooms()  {
-	Room *cabin, *cafeteria, *bridge, *medbay, *weapons1, *storage, *weapons2, *engine1, *engine2, *reactor, *engine2;
+	Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j, *k;
 
-	cabin = new Room("a");
+	a = new Room("cabin");
         a->addItem(new Item("x", 1, 11));
         a->addItem(new Item("y", 2, 22));
-	cafeteria = new Room("b");
+	b = new Room("cafeteria");
         b->addItem(new Item("xx", 3, 33));
         b->addItem(new Item("yy", 4, 44));
-	bridge = new Room("c");
-	medbay = new Room("d");
-	weapons1 = new Room("e");
-	weapons2 = new Room("f");
-	engine1 = new Room("g");
-	reactor = new Room("h");
-	weapons2 = new Room("i");
-	storage = new Room("j");
-	engine2 = new Room("k");
+	c = new Room("bridge");
+	d = new Room("medbay");
+	e = new Room("weapons1");
+	f = new Room("engine2");
+	g = new Room("weapons2");
+    h = new Room("reactor");
+    i = new Room("weapons2");
+    j = new Room("storage");
+    k = new Room("engine2");
 
 //             (N, E, S, W)
 	a->setExits(NULL, b, e, NULL);
