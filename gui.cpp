@@ -1,6 +1,10 @@
 #include "gui.h"
 #include "ui_gui.h"
 #include "inventory.h"
+#include "map.h"
+#include <iostream>
+#include "zorkul.h"
+#include "command.h"
 
 Gui::Gui(QWidget *parent)
     : QMainWindow(parent)
@@ -56,5 +60,7 @@ void Gui::on_PickUpButton_clicked()
 
 void Gui::on_Map_clicked()
 {
-
+ Map Map;
+ Map.setModal(true);
+ Map.exec();
 }

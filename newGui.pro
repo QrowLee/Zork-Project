@@ -9,15 +9,29 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    character.cpp \
+    command.cpp \
+    commandwords.cpp \
     inventory.cpp \
+    item.cpp \
     main.cpp \
     gui.cpp \
-    map.cpp
+    map.cpp \
+    parser.cpp \
+    room.cpp \
+    zorkul.cpp
 
 HEADERS += \
+    character.h \
+    command.h \
+    commandwords.h \
     gui.h \
     inventory.h \
-    map.h
+    item.h \
+    map.h \
+    parser.h \
+    room.h \
+    zorkul.h
 
 FORMS += \
     gui.ui \
@@ -31,3 +45,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resources.qrc
+
+SUBDIRS += \
+
+DISTFILES += \
