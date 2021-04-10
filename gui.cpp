@@ -1,16 +1,16 @@
 #include "gui.h"
 #include "ui_gui.h"
-#include "inventory.h"
-#include "map.h"
-#include <iostream>
-#include "zorkul.h"
-#include "command.h"
+
+
+
+//class Command;
 
 Gui::Gui(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Gui)
 {
     ui->setupUi(this);
+    zorkul = new ZorkUL;
 }
 
 Gui::~Gui()
@@ -21,22 +21,22 @@ Gui::~Gui()
 
 void Gui::on_North_clicked()
 {
-
+    ui->output->append(QString::fromStdString(zorkul->go("north")));
 }
 
 void Gui::on_East_clicked()
 {
-
+ ui->output->append(QString::fromStdString(zorkul->go("east")));
 }
 
 void Gui::on_South_clicked()
 {
-
+ ui->output->append(QString::fromStdString(zorkul->go("south")));
 }
 
 void Gui::on_West_clicked()
 {
-
+  ui->output->append(QString::fromStdString(zorkul->go("west")));
 }
 
 void Gui::on_Inventory_clicked()
@@ -64,3 +64,7 @@ void Gui::on_Map_clicked()
  Map.setModal(true);
  Map.exec();
 }
+
+
+
+

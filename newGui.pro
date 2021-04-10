@@ -10,26 +10,20 @@ CONFIG += c++11
 
 SOURCES += \
     character.cpp \
-    command.cpp \
-    commandwords.cpp \
     inventory.cpp \
     item.cpp \
     main.cpp \
     gui.cpp \
     map.cpp \
-    parser.cpp \
     room.cpp \
     zorkul.cpp
 
 HEADERS += \
     character.h \
-    command.h \
-    commandwords.h \
     gui.h \
     inventory.h \
     item.h \
     map.h \
-    parser.h \
     room.h \
     zorkul.h
 
