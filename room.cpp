@@ -45,6 +45,10 @@ void Room::addItem(Item *inItem) {
     itemsInRoom.push_back(*inItem);
 }
 
+void Room::removeItemFromRoom(){
+    itemsInRoom.erase(itemsInRoom.begin() + 1);
+}
+
 string Room::displayItem() {
     string tempString = "items in room = ";
     int sizeItems = (itemsInRoom.size());
@@ -86,4 +90,7 @@ int Room::isItemInRoom(string inString)
     return -1;
 }
 
+vector <Item> Room::getItemsInRoom(){
+    return itemsInRoom;
+}
 /**/

@@ -8,17 +8,17 @@ using namespace std;
 
 class ZorkUL {
 private:
-
     Room *currentRoom;
     void createRooms();
-    string printWelcome();
     void createItems();
     void displayItems();
+    string printWelcome();
 
 public:
     ZorkUL();
     void play();
     string go(string direction);
+    Room* returnCurrentRoom();
 };
 
 #endif /*ZORKUL_H_*/

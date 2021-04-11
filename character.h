@@ -22,7 +22,6 @@ public:
     Character(string description);
     string shortDescription();
     string longDescription();
-
 };
 
 #endif /*CHARACTER_H_*/

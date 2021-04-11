@@ -19,15 +19,17 @@ private:
 
 public:
     int numberOfItems();
-    Room(string description);
+    int isItemInRoom(string inString);
     void setExits(Room *north, Room *east, Room *south, Room *west);
+    void removeItemFromRoom(int location);
+    void addItem(Item *inItem);
+    void removeItemFromRoom();
     string shortDescription();
     string longDescription();
-    Room* nextRoom(string direction);
-    void addItem(Item *inItem);
     string displayItem();
-    int isItemInRoom(string inString);
-    void removeItemFromRoom(int location);
+    Room* nextRoom(string direction);
+    Room(string description);
+    vector <Item> getItemsInRoom();
 };
 
 #endif

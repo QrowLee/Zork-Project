@@ -2,11 +2,10 @@
 #define GUI_H
 
 #include <QMainWindow>
-#include "inventory.h"
 #include "map.h"
 #include <iostream>
 #include "zorkul.h"
-
+#include "character.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class Gui; }
 QT_END_NAMESPACE
@@ -39,6 +38,7 @@ private slots:
 private:
     Ui::Gui *ui;
     ZorkUL *zorkul;
-
+    Character *character;
+    friend class Inventory;
 };
 #endif // GUI_H

@@ -66,7 +66,7 @@ string ZorkUL::go(string direction) {
     //Move to the next room
     Room* nextRoom = currentRoom->nextRoom(direction);
     if (nextRoom == NULL)
-        return("direction null");
+        return("no exit h");
     else
     {
         currentRoom = nextRoom;

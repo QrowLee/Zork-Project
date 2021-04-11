@@ -1,5 +1,6 @@
 #include "gui.h"
 #include "ui_gui.h"
+#include "inventory.h"
 
 
 
@@ -11,6 +12,9 @@ Gui::Gui(QWidget *parent)
 {
     ui->setupUi(this);
     zorkul = new ZorkUL;
+    character = new Character("a");
+    ui->output->append(QString::fromStdString(zorkul->returnCurrentRoom()->longDescription()));
+
 }
 
 Gui::~Gui()
@@ -21,7 +25,7 @@ Gui::~Gui()
 
 void Gui::on_North_clicked()
 {
-    ui->output->append(QString::fromStdString(zorkul->go("north")));
+ ui->output->append(QString::fromStdString(zorkul->go("north")));
 }
 
 void Gui::on_East_clicked()
@@ -43,9 +47,10 @@ void Gui::on_Inventory_clicked()
 {
   //Model approach
   //Create an object of the inventory class
-  Inventory Inventory;
-  Inventory.setModal(true); //Setting it as true
-  Inventory.exec();//Creating the window from the gui
+  Inventory inv(this);
+  inv.setModal(true); //Setting it as true
+  inv.show();
+  inv.exec();//Creating the window from the gui
 }
 
 void Gui::on_UseButton_clicked()
@@ -55,7 +60,16 @@ void Gui::on_UseButton_clicked()
 
 void Gui::on_PickUpButton_clicked()
 {
+ Room* currentRoom = zorkul->returnCurrentRoom();
+ if (!currentRoom->getItemsInRoom().empty()){
+     for (Item i : currentRoom->getItemsInRoom()){
+         character->addItem(i);
+     }
+     currentRoom->removeItemFromRoom();
 
+ }else{
+   ui->output->append("No items in room");
+ }
 }
 
 void Gui::on_Map_clicked()
