@@ -12,6 +12,8 @@ class Character {
 private:
     string description;
      vector < Item > itemsInCharacter;
+     int oxygen = 100;
+     int health = 100;
 public:
    void addItem(Item &item);
    void addItem(Item *item);

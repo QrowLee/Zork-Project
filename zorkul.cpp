@@ -7,6 +7,10 @@ ZorkUL::ZorkUL() {
     createRooms();
 }
 
+void ZorkUL::createcharacter()
+character* a;
+}
+
 void ZorkUL::createRooms()  {
     Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j, *k;
 
@@ -19,7 +23,7 @@ void ZorkUL::createRooms()  {
     c = new Room("bridge");
 
     d = new Room("medbay");
-         b->addItem(new Item("Medkid", 12));
+         b->addItem(new Item("Medkit", 12));
     e = new Room("weapons1");
     f = new Room("engine2");
          b->addItem(new Item("Spanner", 44));
@@ -77,3 +81,4 @@ string ZorkUL::go(string direction) {
 Room* ZorkUL::returnCurrentRoom(){
     return currentRoom;
 }
+character*

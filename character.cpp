@@ -18,7 +18,14 @@ string Character::longDescription()
     ret += "\t"+ (*i).getLongDescription() + "\n";
   return ret;
 }
-
+bool breathe() {
+    oxygen--20;
+    return (oxygen > 0)
+}
+bool damage(int d) {
+    health--d;
+    return (health > 0)
+}
 
 
 

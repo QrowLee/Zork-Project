@@ -185,7 +185,15 @@ string ZorkUL::go(string direction) {
 		return("direction null");
 	else
 	{
+		if (a.breathe()) {
+			zorkUL.die;
+		}
 		currentRoom = nextRoom;
 		return currentRoom->longDescription();
 	}
+}
+
+void ZorkUL::die() {
+	cout << "dead";
+	exit(3);
 }
