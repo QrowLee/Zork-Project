@@ -1,5 +1,5 @@
 #include "character.h"
-
+int oxygen = 100;
 Character::Character(string description) {
     this->description = description;
 }
@@ -18,14 +18,16 @@ string Character::longDescription()
     ret += "\t"+ (*i).getLongDescription() + "\n";
   return ret;
 }
+
 bool breathe() {
-    oxygen--20;
-    return (oxygen > 0)
+ if (oxygen <= 0){
+    return false;
+ }else{
+   oxygen = oxygen - 20;
+   return true;
+ }
 }
-bool damage(int d) {
-    health--d;
-    return (health > 0)
-}
+
 
 
 

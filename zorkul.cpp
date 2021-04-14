@@ -3,12 +3,10 @@ using namespace std;
 #include "zorkul.h"
 
 
-ZorkUL::ZorkUL() {
+ZorkUL::ZorkUL()
+{
     createRooms();
-}
-
-void ZorkUL::createcharacter()
-character* a;
+    character = new Character("a");
 }
 
 void ZorkUL::createRooms()  {
@@ -23,9 +21,9 @@ void ZorkUL::createRooms()  {
     c = new Room("bridge");
 
     d = new Room("medbay");
-         b->addItem(new Item("Medkit", 12));
+         b->addItem(new Item("Medkid", 12));
     e = new Room("weapons1");
-    f = new Room("engine2");
+    f = new Room("engine1");
          b->addItem(new Item("Spanner", 44));
     g = new Room("weapons2");
     h = new Room("reactor");
@@ -70,15 +68,25 @@ string ZorkUL::go(string direction) {
     //Move to the next room
     Room* nextRoom = currentRoom->nextRoom(direction);
     if (nextRoom == NULL)
-        return("direction null");
+        return("No exit here");
     else
     {
+        /*bool breath = character->breathe();
+            if (!breath) {
+                die();
+            }*/
+            currentRoom = nextRoom;
+            return currentRoom->longDescription();
+        }
         currentRoom = nextRoom;
         return currentRoom->longDescription();
     }
- }
 
 Room* ZorkUL::returnCurrentRoom(){
     return currentRoom;
 }
-character*
+
+void ZorkUL::die() {
+    cout << "dead";
+    exit(3);
+}
