@@ -88,5 +88,7 @@ Room* ZorkUL::returnCurrentRoom(){
 
 void ZorkUL::die() {
     cout << "dead";
-    exit(3);
+    delete Character;
+    createRooms();
+    returnCurrentRoom();
 }

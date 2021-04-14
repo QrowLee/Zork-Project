@@ -3,6 +3,12 @@ int oxygen = 100;
 Character::Character(string description) {
     this->description = description;
 }
+~Character::Character() {
+    delete description;
+    delete itemsInCharacter;
+    delete oxygen;
+}
+
 void Character::addItem(Item &item) {
     itemsInCharacter.push_back(item);
 }
