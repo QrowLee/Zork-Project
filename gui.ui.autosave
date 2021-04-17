@@ -172,7 +172,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Drop / Pickup</string>
+     <string>Pickup</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="output">

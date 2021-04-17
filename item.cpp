@@ -1,21 +1,14 @@
 #include "item.h"
 
-Item::Item (string inDescription, float inValue) {
-    description = inDescription;
-    value = inValue;
+
+Item::Item() {
+    description = "aString";
 }
 
-Item::Item(string inDescription) {
-    description = inDescription;
+Item::Item(string aDescription) {
+    description = aDescription;
 }
 
-void Item::setValue(float inValue)
-{
-    if (inValue > 9999 || inValue < 0)
-       cout << "value invalid, must be 0<value<9999" ;
-    else
-       value = inValue;
-}
 
 string Item::getShortDescription()
 {
@@ -26,4 +19,3 @@ string Item::getLongDescription()
 {
     return " item(s), " + description + ".\n";
 }
-

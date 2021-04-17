@@ -7,18 +7,19 @@ using namespace std;
 #include <vector>
 using std::vector;
 
-
 class Character {
+
 private:
     string description;
-    vector < Item > itemsInCharacter;
     int oxygen;
-
+    vector < Item > itemsInCharacter;
 
 public:
    void addItem(Item &item);
    void addItem(Item *item);
     Character(string description);
+    ~Character();
+    int getOxygen();
     string shortDescription();
     string longDescription();
     bool breathe();

@@ -10,15 +10,16 @@ class Item {
 private:
     string description;
     string longDescription;
-    float value;
+    //float value;
 
 public:
-    Item (string description, float inValue);
-    Item (string description);
+    Item ();
+    Item(string description);
     string getShortDescription();
     string getLongDescription();
-    float getValue();
-    void setValue(float value);
+    //float getValue();
+    //void setValue(float value);
 };
+
 
 #endif /*ITEM_H_*/

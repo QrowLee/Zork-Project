@@ -1,21 +1,27 @@
 #include "character.h"
-int oxygen = 100;
+bool Stupid = true;
+
 Character::Character(string description) {
     this->description = description;
+    oxygen = 100;
 }
-~Character::Character() {
-    delete description;
-    delete itemsInCharacter;
-    delete oxygen;
+Character::~Character() {
+
 }
 
 void Character::addItem(Item &item) {
     itemsInCharacter.push_back(item);
 }
+
 void Character::addItem(Item *item) {
     itemsInCharacter.push_back(*item);
     delete item;
 }
+
+int Character::getOxygen(){
+    return oxygen;
+}
+
 string Character::longDescription()
 {
   string ret = this->description;
@@ -25,7 +31,7 @@ string Character::longDescription()
   return ret;
 }
 
-bool breathe() {
+bool Character::breathe() {
  if (oxygen <= 0){
     return false;
  }else{

@@ -12,8 +12,9 @@ Gui::Gui(QWidget *parent)
 {
     ui->setupUi(this);
     zorkul = new ZorkUL;
-    character = new Character("a");
+    character = zorkul->getChar();
     ui->output->append(QString::fromStdString(zorkul->returnCurrentRoom()->longDescription()));
+    ui->oxygenbar->setValue(100);
 
 }
 
@@ -26,21 +27,31 @@ Gui::~Gui()
 void Gui::on_North_clicked()
 {
  ui->output->append(QString::fromStdString(zorkul->go("north")));
+ if(zorkul->isDead()) QApplication::quit();
+ on_oxygenbar_valueChanged(character->getOxygen());
 }
 
 void Gui::on_East_clicked()
 {
  ui->output->append(QString::fromStdString(zorkul->go("east")));
+ if(zorkul->isDead()) QApplication::quit();
+ on_oxygenbar_valueChanged(character->getOxygen());
 }
 
 void Gui::on_South_clicked()
 {
  ui->output->append(QString::fromStdString(zorkul->go("south")));
+ if(zorkul->isDead()) QApplication::quit();
+ on_oxygenbar_valueChanged(character->getOxygen());
+
 }
 
 void Gui::on_West_clicked()
 {
   ui->output->append(QString::fromStdString(zorkul->go("west")));
+  if(zorkul->isDead()) QApplication::quit();
+  on_oxygenbar_valueChanged(character->getOxygen());
+
 }
 
 void Gui::on_Inventory_clicked()
@@ -79,6 +90,7 @@ void Gui::on_Map_clicked()
  Map.exec();
 }
 
-
-
-
+void Gui::on_oxygenbar_valueChanged(int value)
+{
+    ui->oxygenbar->setValue(value);
+}

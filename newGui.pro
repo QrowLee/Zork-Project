@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     character.cpp \
+    consumable.cpp \
     inventory.cpp \
     item.cpp \
     main.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 
 HEADERS += \
     character.h \
+    consumable.h \
     gui.h \
     inventory.h \
     item.h \

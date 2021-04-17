@@ -35,6 +35,8 @@ private slots:
 
     void on_Map_clicked();
 
+    void on_oxygenbar_valueChanged(int value);
+
 private:
     Ui::Gui *ui;
     ZorkUL *zorkul;
