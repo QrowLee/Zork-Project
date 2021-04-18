@@ -20,6 +20,7 @@ public:
     ZorkUL();
     void play();
     void die();
+	void useconsumable(consumable a);
     string go(string direction);
     Room* returnCurrentRoom();
 

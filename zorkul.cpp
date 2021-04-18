@@ -92,3 +92,7 @@ void ZorkUL::die() {
     createRooms();
     returnCurrentRoom();
 }
+
+void ZorkUL::useconsumable(consumable a) {
+    character->useConsumable(a);
+}

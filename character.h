@@ -17,6 +17,7 @@ private:
 public:
    void addItem(Item &item);
    void addItem(Item *item);
+void useConsumable(consumable a);
     Character(string description);
     ~Character();
     int getOxygen();
