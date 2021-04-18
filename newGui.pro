@@ -16,8 +16,8 @@ SOURCES += \
     item.cpp \
     main.cpp \
     gui.cpp \
-    map.cpp \
     room.cpp \
+    tool.cpp \
     win.cpp \
     zorkul.cpp
 
@@ -28,8 +28,8 @@ HEADERS += \
     gui.h \
     inventory.h \
     item.h \
-    map.h \
     room.h \
+    tool.h \
     win.h \
     zorkul.h
 
@@ -37,7 +37,6 @@ FORMS += \
     dead.ui \
     gui.ui \
     inventory.ui \
-    map.ui \
     win.ui
 
 # Default rules for deployment.

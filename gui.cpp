@@ -100,12 +100,6 @@ void Gui::on_PickUpButton_clicked()
  }
 }
 
-void Gui::on_Map_clicked()
-{
- Map Map;
- Map.setModal(true);
- Map.exec();
-}
 
 void Gui::on_oxygenbar_valueChanged(int value)
 {

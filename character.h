@@ -10,22 +10,23 @@ using std::vector;
 class Character {
 
 private:
+    friend class Consumable;
     string description;
     int oxygen;
     vector < Item > itemsInCharacter;
 
 public:
+
    void addItem(Item &item);
    void addItem(Item *item);
-void useConsumable(consumable a);
     Character(string description);
-    ~Character();
-    int getOxygen();
+    ~Character();    int getOxygen();
     string shortDescription();
     string longDescription();
     bool breathe();
     int getSize();
-    bool getItem(string name);
+    bool getItem(Item name);
+    //void useConsumable(consumable a);
 };
 
 #endif /*CHARACTER_H_*/

@@ -28,9 +28,9 @@ int Character::getSize(){
     return itemsInCharacter.size();
 }
 
-bool Character::getItem(string name){
+bool Character::getItem(Item name){
     for(int i=0; i<getSize(); i++){
-       if (itemsInCharacter[i].getShortDescription() == name) {
+       if (itemsInCharacter[i] == name) {
            return true;
        }
     }
@@ -55,10 +55,8 @@ bool Character::breathe() {
  }
 }
 
-void Character::useConsumable(consumable a) {
-    oxygen = oxygen + a->useOxygen();
-}
-
-
+//void Character::useConsumable(consumable a) {
+//    oxygen = oxygen + a->useOxygen();
+//}
 
 

@@ -9,6 +9,10 @@ Item::Item(string aDescription) {
     description = aDescription;
 }
 
+bool Item::operator==(Item& other){
+    return other.getShortDescription() == description;
+}
+
 
 string Item::getShortDescription()
 {

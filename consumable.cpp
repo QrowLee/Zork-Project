@@ -1,12 +1,7 @@
 #include "consumable.h"
 
-consumable::consumable(string inDescription, int iOxygen) {
-    description = inDescription;
+consumable::consumable(string description, int iOxygen):Item(description){
     Oxygen = iOxygen;
-}
-
-consumable::~consumable(){
-cout <<"Some String"<< endl;
 }
 
 void consumable::setOxygen(int oxygenLevel){
