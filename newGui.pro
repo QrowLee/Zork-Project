@@ -11,28 +11,34 @@ CONFIG += c++11
 SOURCES += \
     character.cpp \
     consumable.cpp \
+    dead.cpp \
     inventory.cpp \
     item.cpp \
     main.cpp \
     gui.cpp \
     map.cpp \
     room.cpp \
+    win.cpp \
     zorkul.cpp
 
 HEADERS += \
     character.h \
     consumable.h \
+    dead.h \
     gui.h \
     inventory.h \
     item.h \
     map.h \
     room.h \
+    win.h \
     zorkul.h
 
 FORMS += \
+    dead.ui \
     gui.ui \
     inventory.ui \
-    map.ui
+    map.ui \
+    win.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

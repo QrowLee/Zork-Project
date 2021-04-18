@@ -6,6 +6,7 @@
 #include <iostream>
 #include "zorkul.h"
 #include "character.h"
+#include "dead.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class Gui; }
 QT_END_NAMESPACE
@@ -17,6 +18,7 @@ class Gui : public QMainWindow
 public:
     Gui(QWidget *parent = nullptr);
     ~Gui();
+    void makeDeathScreen();
 
 private slots:
     void on_North_clicked();
@@ -42,5 +44,6 @@ private:
     ZorkUL *zorkul;
     Character *character;
     friend class Inventory;
+    bool inO2 = false;
 };
 #endif // GUI_H

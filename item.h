@@ -7,7 +7,7 @@
 using namespace std;
 
 class Item {
-private:
+protected:
     string description;
     string longDescription;
     //float value;

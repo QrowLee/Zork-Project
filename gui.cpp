@@ -13,6 +13,8 @@ Gui::Gui(QWidget *parent)
     ui->setupUi(this);
     zorkul = new ZorkUL;
     character = zorkul->getChar();
+    ui->output->append(QString::fromStdString("You wake up to the sound of alarms balring `Oxygen levels depleated' \n"));
+    ui->output->append(QString::fromStdString("[New Mission collect spanner and keycard to fix o2] \n"));
     ui->output->append(QString::fromStdString(zorkul->returnCurrentRoom()->longDescription()));
     ui->oxygenbar->setValue(100);
 
@@ -23,35 +25,50 @@ Gui::~Gui()
     delete ui;
 }
 
+void Gui::makeDeathScreen(){
+    Dead Dead;
+    Dead.setModal(true);
+    Dead.exec();
+}
 
 void Gui::on_North_clicked()
 {
  ui->output->append(QString::fromStdString(zorkul->go("north")));
- if(zorkul->isDead()) QApplication::quit();
+ if(zorkul->isDead()) makeDeathScreen();//QApplication::quit();
  on_oxygenbar_valueChanged(character->getOxygen());
+ if (zorkul->areItemsInInventory())
+     inO2 = true;
+   //QApplication::quit();
 }
 
 void Gui::on_East_clicked()
 {
  ui->output->append(QString::fromStdString(zorkul->go("east")));
- if(zorkul->isDead()) QApplication::quit();
+ if(zorkul->isDead()) makeDeathScreen();//QApplication::quit();
  on_oxygenbar_valueChanged(character->getOxygen());
+ if (zorkul->areItemsInInventory())
+     inO2 = true;
+   //QApplication::quit();
 }
 
 void Gui::on_South_clicked()
 {
  ui->output->append(QString::fromStdString(zorkul->go("south")));
- if(zorkul->isDead()) QApplication::quit();
+ if(zorkul->isDead()) makeDeathScreen(); //QApplication::quit();
  on_oxygenbar_valueChanged(character->getOxygen());
-
+ if (zorkul->areItemsInInventory())
+     inO2 = true;
+  //QApplication::quit();
 }
 
 void Gui::on_West_clicked()
 {
   ui->output->append(QString::fromStdString(zorkul->go("west")));
-  if(zorkul->isDead()) QApplication::quit();
+  if(zorkul->isDead()) makeDeathScreen(); //QApplication::quit();
   on_oxygenbar_valueChanged(character->getOxygen());
-
+  if (zorkul->areItemsInInventory())
+      inO2 = true;
+    //QApplication::quit();
 }
 
 void Gui::on_Inventory_clicked()

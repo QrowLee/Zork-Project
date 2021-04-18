@@ -23,6 +23,8 @@ public:
     string shortDescription();
     string longDescription();
     bool breathe();
+    int getSize();
+    bool getItem(string name);
 };
 
 #endif /*CHARACTER_H_*/
