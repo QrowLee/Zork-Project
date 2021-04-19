@@ -36,8 +36,8 @@ void Gui::on_North_clicked()
  ui->output->append(QString::fromStdString(zorkul->go("north")));
  if(zorkul->isDead()) makeDeathScreen();//QApplication::quit();
  on_oxygenbar_valueChanged(character->getOxygen());
- if (zorkul->inO2() && zorkul->areItemsInInventory())
-     ui->output->append(QString::fromStdString("POG"));
+  if (zorkul->inO2() && zorkul->areItemsInInventory()) zorkul->makeWinScreen();
+
    //QApplication::quit();
 }
 
@@ -46,6 +46,7 @@ void Gui::on_East_clicked()
  ui->output->append(QString::fromStdString(zorkul->go("east")));
  if(zorkul->isDead()) makeDeathScreen();//QApplication::quit();
  on_oxygenbar_valueChanged(character->getOxygen());
+  if (zorkul->inO2() && zorkul->areItemsInInventory()) zorkul->makeWinScreen();
 
    //QApplication::quit();
 }
@@ -55,6 +56,7 @@ void Gui::on_South_clicked()
  ui->output->append(QString::fromStdString(zorkul->go("south")));
  if(zorkul->isDead()) makeDeathScreen(); //QApplication::quit();
  on_oxygenbar_valueChanged(character->getOxygen());
+  if (zorkul->inO2() && zorkul->areItemsInInventory()) zorkul->makeWinScreen();
 
   //QApplication::quit();
 }
@@ -64,6 +66,7 @@ void Gui::on_West_clicked()
   ui->output->append(QString::fromStdString(zorkul->go("west")));
   if(zorkul->isDead()) makeDeathScreen(); //QApplication::quit();
   on_oxygenbar_valueChanged(character->getOxygen());
+   if (zorkul->inO2() && zorkul->areItemsInInventory()) zorkul->makeWinScreen();
 
     //QApplication::quit();
 }
@@ -78,10 +81,6 @@ void Gui::on_Inventory_clicked()
   inv.exec();//Creating the window from the gui
 }
 
-void Gui::on_UseButton_clicked()
-{
-
-}
 
 void Gui::on_PickUpButton_clicked()
 {

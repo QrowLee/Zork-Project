@@ -31,8 +31,6 @@ private slots:
 
     void on_Inventory_clicked();
 
-    void on_UseButton_clicked();
-
     void on_PickUpButton_clicked();
 
     void on_oxygenbar_valueChanged(int value);

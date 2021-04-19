@@ -28,9 +28,9 @@ int Character::getSize(){
     return itemsInCharacter.size();
 }
 
-bool Character::getItem(Item* name){
+bool Character::getItem(string name){
     for(int i=0; i<getSize(); i++){
-       if (&itemsInCharacter[i] == name) {
+       if (itemsInCharacter[i].getShortDescription() == name) {
            return true;
        }
     }

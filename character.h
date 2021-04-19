@@ -13,7 +13,7 @@ private:
     friend class Consumable;
     string description;
     int oxygen;
-    vector < Item > itemsInCharacter;
+    vector <Item> itemsInCharacter;
 
 public:
 
@@ -25,7 +25,7 @@ public:
     string longDescription();
     bool breathe();
     int getSize();
-    bool getItem(Item* name);
+    bool getItem(string name);
     //void useConsumable(consumable a);
 };
 
