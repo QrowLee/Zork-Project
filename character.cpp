@@ -55,8 +55,5 @@ bool Character::breathe() {
  }
 }
 
-//void Character::useConsumable(consumable a) {
-//    oxygen = oxygen + a->useOxygen();
-//}
 
 

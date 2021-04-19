@@ -26,7 +26,6 @@ public:
     bool breathe();
     int getSize();
     bool getItem(string name);
-    //void useConsumable(consumable a);
 };
 
 #endif /*CHARACTER_H_*/

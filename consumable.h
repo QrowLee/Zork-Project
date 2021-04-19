@@ -10,8 +10,7 @@
 class consumable  : public Item
 {
 protected:
-//    string description;
-//    string longDescription;
+
     int Oxygen;
 
 public:
