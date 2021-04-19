@@ -25,7 +25,7 @@ public:
     string longDescription();
     bool breathe();
     int getSize();
-    bool getItem(Item name);
+    bool getItem(Item* name);
     //void useConsumable(consumable a);
 };
 

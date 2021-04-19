@@ -10,13 +10,12 @@
 class consumable  : public Item
 {
 protected:
-    string description;
-    string longDescription;
+//    string description;
+//    string longDescription;
     int Oxygen;
 
 public:
     consumable(string description, int Oxygen);
-    ~consumable();
     int getOxygen();
     void setOxygen(int oxygenLevel);
     int useOxygen(int capacity);

@@ -35,8 +35,6 @@ private slots:
 
     void on_PickUpButton_clicked();
 
-    void on_Map_clicked();
-
     void on_oxygenbar_valueChanged(int value);
 
 private:

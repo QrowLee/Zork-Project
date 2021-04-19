@@ -1,6 +1,5 @@
 #ifndef ITEM_H_
 #define ITEM_H_
-#include "tool.h"
 #include <map>
 #include <string>
 #include <iostream>
